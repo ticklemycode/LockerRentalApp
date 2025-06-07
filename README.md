@@ -1,97 +1,235 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# LockerRentalApp 🏠📱
 
-# Getting Started
+A comprehensive React Native mobile application for renting lockers. Find, book, and manage locker rentals at various business locations with real-time availability, location-based search, and interactive maps.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🚀 Features
 
-## Step 1: Start Metro
+### 🔍 **Smart Search & Discovery**
+- **Location-based search**: Find lockers near your current location
+- **ZIP code search**: Search for lockers in specific areas
+- **Business name search**: Find lockers at specific businesses
+- **Interactive maps**: View locker locations on Google Maps with real-time availability
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### 📅 **Booking Management**
+- **Real-time booking**: Book lockers with date/time selection
+- **Locker selection**: Choose from available lockers with visual grid
+- **Booking history**: View all past and upcoming bookings
+- **Status tracking**: Monitor booking status (confirmed, active, completed, cancelled)
+- **Cancellation**: Cancel bookings (with time restrictions)
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### 🗺️ **Location Services**
+- **GPS integration**: Automatic location detection
+- **Map integration**: Interactive Google Maps with business markers
+- **Distance calculation**: Show distance to nearby locker locations
+- **Address lookup**: Full address display for each location
 
-```sh
-# Using npm
-npm start
+### 👤 **User Experience**
+- **Authentication**: Secure user registration and login
+- **Profile management**: User profile and preferences
+- **Real-time updates**: Live status updates and notifications
+- **Responsive design**: Optimized for iOS and Android
 
-# OR using Yarn
-yarn start
-```
+## 📱 Screenshots & Demo
 
-## Step 2: Build and run your app
+The app features a modern, intuitive interface with:
+- Clean tab-based navigation (Home, Search, Bookings, Profile)
+- Interactive search with location/ZIP code toggle
+- Real-time map view with business markers
+- Detailed booking management screens
+- Professional booking confirmation flow
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## 🛠️ Tech Stack
 
-### Android
+### **Frontend**
+- **React Native 0.79.3** - Cross-platform mobile development
+- **TypeScript** - Type-safe development
+- **React Navigation** - Navigation and routing
+- **Redux Toolkit** - State management
+- **React Native Maps** - Google Maps integration
 
-```sh
-# Using npm
-npm run android
+### **Key Dependencies**
+- `@react-navigation/native` & `@react-navigation/stack` - Navigation
+- `@reduxjs/toolkit` & `react-redux` - State management
+- `react-native-maps` - Map functionality
+- `react-native-vector-icons` - Icons and UI elements
+- `@react-native-community/geolocation` - Location services
+- `axios` - HTTP client for API calls
 
-# OR using Yarn
-yarn android
-```
+### **Development Tools**
+- **ESLint** - Code linting
+- **Prettier** - Code formatting
+- **Jest** - Testing framework
+- **TypeScript** - Static type checking
 
-### iOS
+## 🚀 Getting Started
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+### Prerequisites
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+- Node.js (>= 18)
+- React Native CLI
+- iOS: Xcode and CocoaPods
+- Android: Android Studio and Android SDK
 
-```sh
-bundle install
-```
+### Installation
 
-Then, and every time you update your native dependencies, run:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ticklemycode/LockerRentalApp.git
+   cd LockerRentalApp
+   ```
 
-```sh
-bundle exec pod install
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+3. **iOS Setup** (iOS only)
+   ```bash
+   cd ios
+   bundle install
+   bundle exec pod install
+   cd ..
+   ```
 
-```sh
-# Using npm
+4. **Environment Configuration**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your API keys and configuration
+   ```
+
+### Running the App
+
+#### iOS
+```bash
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+#### Android
+```bash
+npm run android
+```
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+#### Start Metro (in a separate terminal)
+```bash
+npm start
+```
 
-## Step 3: Modify your app
+## ⚙️ Configuration
 
-Now that you have successfully run the app, let's make changes!
+### Environment Variables
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Create a `.env` file based on `.env.example`:
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+```bash
+# API Configuration
+API_BASE_URL=http://localhost:3000
+API_TIMEOUT=10000
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+# Google Maps API
+GOOGLE_MAPS_API_KEY=your-google-maps-api-key-here
 
-## Congratulations! :tada:
+# Default Location (Atlanta)
+DEFAULT_LATITUDE=33.7490
+DEFAULT_LONGITUDE=-84.3880
 
-You've successfully run and modified your React Native App. :partying_face:
+# App Configuration
+APP_ENV=development
+DEBUG=true
+```
 
-### Now what?
+### Google Maps Setup
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+1. Get a Google Maps API key from [Google Cloud Console](https://console.cloud.google.com/)
+2. Enable Maps SDK for iOS/Android
+3. Add the key to your `.env` file
 
-# Troubleshooting
+## 📁 Project Structure
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+```
+src/
+├── components/          # Reusable UI components
+│   ├── BusinessMap.tsx  # Interactive map component
+│   ├── ErrorBoundary.tsx
+│   └── LoadingSpinner.tsx
+├── navigation/          # Navigation configuration
+├── screens/            # Main app screens
+│   ├── HomeScreen.tsx
+│   ├── SearchScreen.tsx
+│   ├── BookingsScreen.tsx
+│   └── BookingDetailsScreen.tsx
+├── services/           # API and external services
+│   ├── api.ts          # Main API service
+│   └── locationService.ts
+├── store/             # Redux store and slices
+│   ├── authSlice.ts
+│   ├── bookingSlice.ts
+│   └── businessSlice.ts
+├── types/             # TypeScript type definitions
+└── utils/             # Helper functions and utilities
+```
 
-# Learn More
+## 🔧 Development
 
-To learn more about React Native, take a look at the following resources:
+### Available Scripts
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- `npm start` - Start Metro bundler
+- `npm run ios` - Run on iOS simulator
+- `npm run android` - Run on Android emulator
+- `npm test` - Run tests
+- `npm run lint` - Run ESLint
+
+### Key Features Implementation
+
+#### Search Functionality
+- **Dual search modes**: Location-based (GPS) and manual search (ZIP/business name)
+- **Real-time results**: Instant search results with loading states
+- **Map integration**: Automatic map display when results are found
+
+#### Booking System
+- **Date/time selection**: Custom date and time pickers
+- **Locker availability**: Real-time availability checking
+- **Pricing calculation**: Dynamic pricing based on duration
+- **Confirmation flow**: Multi-step booking confirmation
+
+#### State Management
+- **Redux Toolkit**: Centralized state management
+- **Async actions**: API calls with loading and error states
+- **Persistent data**: User sessions and booking history
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Metro bundler issues**
+   ```bash
+   npx react-native start --reset-cache
+   ```
+
+2. **iOS build issues**
+   ```bash
+   cd ios && pod install && cd ..
+   ```
+
+3. **Android build issues**
+   ```bash
+   cd android && ./gradlew clean && cd ..
+   ```
+
+### Debug Features
+
+The app includes debug helpers for development:
+- Location debugging in SearchScreen
+- API response logging
+- State debugging utilities
+
+## 📄 License
+
+This project is private. All rights reserved.
+
+## 🤝 Contributing
+
+This is a private project. Contact the maintainer for contribution guidelines.
+
+---
+
+**Built with ❤️ using React Native and TypeScript**
